@@ -1,0 +1,18 @@
+# SPDX-FileCopyrightText: 2025 Yale University
+# SPDX-License-Identifier: Apache-2.0
+
+# typos configuration (https://github.com/crate-ci/typos)
+
+[default]
+extend-ignore-re = [
+  # ignore lines with trailing "spellchecker:disable-line"
+  "(?Rm)^.*(#|//)\\s*spellchecker:disable-line$",
+  # ignore blocks with "spellchecker:<on|off>"
+  "(?s)(#|//)\\s*spellchecker:off.*?\\n\\s*(#|//)\\s*spellchecker:on",
+  # ignore false positives triggered by "ba" surrounded by numbers
+  "[0-9]+ba",
+  "ba[0-9]+",
+]
+
+[default.extend-words]
+eaasi = "eaasi"
