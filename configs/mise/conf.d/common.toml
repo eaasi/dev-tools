@@ -14,3 +14,6 @@ MENV_CONFIG_DIR = ".config"
 
 [settings]
 task_output = "prefix"
+experimental = true
+lockfile = true
+locked = true
