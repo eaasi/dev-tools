@@ -1,0 +1,16 @@
+# SPDX-FileCopyrightText: 2025 Yale University
+# SPDX-License-Identifier: Apache-2.0
+
+# mise configuration file (https://mise.jdx.dev/configuration.html)
+
+min_version = "2026.1.0"
+
+[env]
+# NOTE: Common configuration variables should begin with "MENV_"
+#       and are intended for consistent use in tasks at runtime!
+
+# Directory containing tooling configs
+MENV_CONFIG_DIR = ".config"
+
+[settings]
+task_output = "prefix"
