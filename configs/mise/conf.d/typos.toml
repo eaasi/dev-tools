@@ -1,0 +1,7 @@
+# SPDX-FileCopyrightText: 2025 Yale University
+# SPDX-License-Identifier: Apache-2.0
+
+# mise configuration file (https://mise.jdx.dev/configuration.html)
+
+[tools]
+typos = "v1.42.1"
