@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+# SPDX-FileCopyrightText: 2025 Yale University
+# SPDX-License-Identifier: Apache-2.0
+
+set -o errexit
+
+# [MISE] description="Show spell check diffs"
+# [USAGE] arg "[path]" default="." help="Path to check"
+
+typos -c "${MENV_CONFIG_DIR:?}/typos.toml" \
+  --diff "${usage_path:?}"
