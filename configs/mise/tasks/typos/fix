@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+# SPDX-FileCopyrightText: 2025 Yale University
+# SPDX-License-Identifier: Apache-2.0
+
+set -o errexit
+
+# [MISE] description="Apply spell check fixes"
+# [USAGE] arg "[path]" default="." help="Path to check and apply fixes to"
+
+typos -c "${MENV_CONFIG_DIR:?}/typos.toml" \
+  --write-changes "${usage_path:?}"
