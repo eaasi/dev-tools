@@ -1,0 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Yale University
+# SPDX-License-Identifier: Apache-2.0
+
+# Configuration for cargo-generate (https://cargo-generate.github.io/cargo-generate)
+
+[template]
+cargo_generate_version = ">=0.23.7"
+sub_templates = [
+]
