@@ -1,0 +1,18 @@
+#!/usr/bin/env sh
+
+# SPDX-FileCopyrightText: 2025 Yale University
+# SPDX-License-Identifier: Apache-2.0
+
+set -o errexit
+
+# [MISE] description="Update target directory"
+# [MISE] raw=true  # Interactive terminal is required!
+# [USAGE] flag "--git-ref <ref>" default="HEAD" help="Git reference for the source template"
+# [USAGE] arg "<template>" help="Source template"
+# [USAGE] arg "<dir>" help="Target directory"
+# [USAGE] complete "ref" run="git for-each-ref --format='%(refname:short)'"
+
+copier update \
+  --answers-file "${MENV_COPIER_DIR:?}/${usage_template:?}.yaml" \
+  --vcs-ref "${usage_git_ref:?}" \
+  "${usage_dir:?}"
