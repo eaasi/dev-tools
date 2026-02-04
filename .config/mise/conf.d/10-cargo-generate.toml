@@ -1,0 +1,7 @@
+# SPDX-FileCopyrightText: 2025 Yale University
+# SPDX-License-Identifier: Apache-2.0
+
+# Configuration for mise (https://mise.jdx.dev/configuration.html)
+
+[tools]
+"github:cargo-generate/cargo-generate" = "v0.23.7"
