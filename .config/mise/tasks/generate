@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+
+# SPDX-FileCopyrightText: 2025 Yale University
+# SPDX-License-Identifier: Apache-2.0
+
+set -o errexit
+
+# [MISE] description="Apply template to target directory"
+# [MISE] raw=true  # Interactive terminal is required!
+# [USAGE] arg "<dir>" help="Target directory"
+# [USAGE] arg "[template]" default="." help="Source template"
+# [USAGE] complete "template" run="find . -mindepth 2 -path '*/cargo-generate.toml' -printf '%h\n' | sed 's|/template$||'"
+
+cargo-generate generate \
+  --init \
+  --name "dev-tools" \
+  --destination "${usage_dir:?}" \
+  --path "${MISE_PROJECT_ROOT:?}" \
+  "${usage_template:?}"
