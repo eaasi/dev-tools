@@ -1,0 +1,14 @@
+# SPDX-FileCopyrightText: 2025 Yale University
+# SPDX-License-Identifier: Apache-2.0
+
+# Mise configuration (https://mise.jdx.dev/configuration.html)
+
+[tools]
+"pipx:copier" = "v9.11.3"
+
+[env]
+# NOTE: Common configuration variables should begin with "MENV_"
+#       and are intended for consistent use in tasks at runtime!
+
+# Directory for Copier state
+MENV_COPIER_DIR = ".config/copier"

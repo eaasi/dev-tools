@@ -1,0 +1,3 @@
+[[tools."pipx:copier"]]
+version = "9.11.3"
+backend = "pipx:copier"
