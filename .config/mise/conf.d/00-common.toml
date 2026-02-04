@@ -11,3 +11,8 @@ min_version = "2026.2.0"
 
 # Directory for tooling configs
 MENV_CONFIG_DIR = ".config"
+
+[settings]
+experimental = true
+lockfile = true
+locked = true
