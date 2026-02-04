@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+
+# SPDX-FileCopyrightText: 2025 Yale University
+# SPDX-License-Identifier: Apache-2.0
+
+set -o errexit
+
+# [MISE] description="Copy source template to target directory"
+# [MISE] raw=true  # Interactive terminal is required!
+# [USAGE] arg "<template>" help="Source template"
+# [USAGE] arg "<dir>" help="Target directory"
+
+copier copy \
+  --answers-file "${MENV_COPIER_DIR:?}/${usage_template:?}.yaml" \
+  "${usage_template:?}" \
+  "${usage_dir:?}"
