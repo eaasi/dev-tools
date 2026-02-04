@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+
+# SPDX-FileCopyrightText: 2025 Yale University
+# SPDX-License-Identifier: Apache-2.0
+
+set -o errexit
+
+# [MISE] description="Prepare repository for template updates"
+# [USAGE] flag "-b --branch <branch>" default="dev-tools-base" help="Target branch"
+# [USAGE] arg "<dir>" help="Cloned repository"
+
+cd "${usage_dir:?}"
+
+if ! git rev-parse --verify --quiet "${usage_branch:?}" > /dev/null 2>&1; then
+  # Branch doesn't exist, create a new one!
+  git switch --orphan "${usage_branch:?}"
+  exit 0
+fi
+
+# Prepare the existing branch...
+git switch "${usage_branch:?}"
+git rm -rf .
