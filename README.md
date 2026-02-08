@@ -27,6 +27,32 @@ mise tasks ls
 > mise install
 > ```
 
+### Using Templates
+
+The provided configuration templates are managed with [cargo-generate](https://github.com/cargo-generate/cargo-generate), which will be installed by mise automatically.
+
+> [!WARNING]
+> By default, cargo-generate assumes an empty target directory when applying rendered templates and will fail if any conflicts are found, but it can also be instructed to overwrite all existing files during the generation process.
+
+To apply a specific template to a target repository, execute the following task:
+
+```shell
+mise run generate <target-repo-dir> <template-dir>
+```
+
+To see an overview of all available templates and choose one interactively, simply run:
+
+```shell
+mise run generate <target-repo-dir>
+```
+
+For more advanced use cases, the `cargo-generate` binary should be called directly:
+
+```shell
+cargo-generate generate --init --name "dev-tools" \
+  --path <dev-tools-repo-dir> --destination <target-repo-dir>
+```
+
 ## License
 
 This repository and its content are distributed under the [Apache-2.0](./LICENSE) license.
