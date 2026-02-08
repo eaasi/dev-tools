@@ -53,6 +53,32 @@ cargo-generate generate --init --name "dev-tools" \
   --path <dev-tools-repo-dir> --destination <target-repo-dir>
 ```
 
+> [!TIP]
+> To simplify maintenance and enable the updating of previously generated (and possibly modified) configuration templates, the following procedure can be used:
+>
+> 1. Prepare a dedicated Git branch (e.g. named `build/dev-tools-base`) in the target repository:
+>
+>    ```shell
+>    mise run prepare -b "build/dev-tools-base" <target-repo-dir>
+>    ```
+>
+>    This step checks out and prepares an existing branch or creates an empty orphan-branch in the target repository.
+>
+> 1. Apply each configuration template to the target repository (e.g. by running `mise run generate`).
+> 1. Commit all relevant changes to the base branch (in batch or each change individually) using Git.
+> 1. Merge the updated base branch into the target branch (e.g. `main`) using the following commands:
+>
+>    ```shell
+>    # switch to a target branch...
+>    git switch main
+>    # when merging for the first time...
+>    git merge "build/dev-tools-base" --allow-unrelated-histories
+>    # for all subsequent merges...
+>    git merge "build/dev-tools-base"
+>    ```
+>
+>    Potential merge conflicts can then be resolved using the Git-native 3-way merge (see [docs](https://git-scm.com/docs/merge-strategies) for more details).
+
 ## License
 
 This repository and its content are distributed under the [Apache-2.0](./LICENSE) license.
